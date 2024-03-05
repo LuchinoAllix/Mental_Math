@@ -30,6 +30,7 @@ def addition(m,level):
 			pass
 		
 	corrects = 0
+	start = time.time()
 	for i in range(1,int(m)+1):
 		a = random.randint(base,top)
 		b = random.randint(base,top)
@@ -40,7 +41,9 @@ def addition(m,level):
 			print("Correct\n")
 		else :
 			print("Incorrect\n")
+	end = time.time()
 	print("Résultat:",corrects,"/",m)
+	print("Temps :", end-start, " secondes.\n")
 
 def différence(m,level):
 	pass
@@ -56,7 +59,6 @@ def puissance(m,level):
 
 def modulo(m,level):
 	pass
-
 
 def main() :
 	print("Menu principal")
