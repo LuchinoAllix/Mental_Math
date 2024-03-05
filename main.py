@@ -10,14 +10,27 @@ def addition(m,level):
 		case 3 :
 			top = 100
 		case 4 :
-			while int(base) is not int : 
+			while True : 
 				base = input("base = ")
+				try :
+					if int(base) or True :
+						break
+				except :
+					pass
 				print("Base doit être un nombre")
-			while int(top) is not int :
+			while True :
 				top = input("top = ")
+				try :
+					if int(top) or True :
+						break
+				except :
+					pass
 				print("Top doit être un nombre")
+		case other :
+			pass
+		
 	corrects = 0
-	for i in range(1,m+1):
+	for i in range(1,int(m)+1):
 		a = random.randint(base,top)
 		b = random.randint(base,top)
 		print("Calcul n°",i,":")
@@ -27,7 +40,7 @@ def addition(m,level):
 			print("Correct\n")
 		else :
 			print("Incorrect\n")
-	print("Résultat:",corrects,"/",n)
+	print("Résultat:",corrects,"/",m)
 
 def différence(m,level):
 	pass
@@ -87,8 +100,13 @@ def main() :
 	print("\t 3) Difficilé ")
 	print("\t 4) Customisable ")
 
-	while int(level) not in range (1,5) :
+	while True :
 		level = input("Choisir la difficulté :")
+		try :
+			if int(level) in range(1,5) :
+				break
+		except :
+			pass
 		print("Les options sont : 1,2,3 et 4.")
 
 	match int(n) :
